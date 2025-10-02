@@ -12,5 +12,5 @@ export const useTaskStore = defineStore('taskstore', {
     favs: (state) => {
       return state.tasks.filter((task) => task.isFav)
     },
-  },
+  }, 
 })
