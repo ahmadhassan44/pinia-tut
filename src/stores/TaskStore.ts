@@ -1,6 +1,6 @@
-import { defineStore, type StoreDefinition } from 'pinia'
+import { defineStore } from 'pinia'
 
-export const useTaskStore: StoreDefinition<'taskstore', {}, {}, {}> = defineStore('taskstore', {
+export const useTaskStore = defineStore('taskstore', {
   state: () => ({
     tasks: [
       { id: 1, title: 'buy some milk', isFav: false },
