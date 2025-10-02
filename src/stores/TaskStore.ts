@@ -13,4 +13,15 @@ export const useTaskStore = defineStore('taskstore', {
       return state.tasks.filter((task) => task.isFav)
     },
   }, 
+  actions:{
+    addTask(task:string){
+      console.log('Adding task', task);
+      const newTask = {
+        id: Math.random(),
+        title: task,
+        isFav: false
+      }
+      this.tasks.push(newTask)
+    }
+  }
 })

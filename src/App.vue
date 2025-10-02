@@ -7,6 +7,9 @@
     <button @click="filter='all'">All Tasks</button>
     <button @click="filter='fav'">Fav Task</button>
   </nav>
+  <div class="new-task-form">
+    <AddTaskForm/>
+  </div>
   <div class="task-list" v-if="filter==='all'">
     <div v-for="task in taskStore.tasks" :key="task.id">
       <TaskDetails :task="task" />
@@ -23,10 +26,12 @@
 import { useTaskStore } from './stores/TaskStore'
 import TaskDetails from './components/TaskDetails.vue'
 import { ref } from 'vue';
+import AddTaskForm from './components/AddTaskForm.vue';
 
 export default {
   components: {
     TaskDetails,
+    AddTaskForm
   },
   setup() {
     const taskStore = useTaskStore()
